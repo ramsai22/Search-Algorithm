@@ -19,31 +19,97 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
-
-
+''' 
+Program for linear search method to match the item in a list
+Developed by:paida ram sai
+RegisterNumber: 23007931
+'''
+def linearSearch(array,n,k):
+    for i in range(0,n):
+        if (array[i]==k):
+            return i
+    return -1
+array = eval(input())
+k=eval(input())
+n=len(array)
+array.sort()
+result=linearSearch(array,n,k)
+if result==-1:
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)
 
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
-
-
-
+''' 
+Program to find the element in a list using Binary Search(Iterative Method)..
+Developed by:paida ram sai
+RegisterNumber: 23007931
+'''
+def binarySearchIter(array, k, low, high):
+    while low <=high:
+        mid = low +(high - low)//2
+        if array[mid]==k:
+            return mid
+        elif array[mid] < k:
+            low = mid + 1
+        else:
+            high=mid-1
+            
+    return -1
+array=eval(input())
+array.sort()
+k=eval(input())
+result=binarySearchIter(array, k, 0, len(array)-1)
+if result==-1:
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)
 
 
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
-
-
-
-
+''' 
+Program to find the element in a list using Binary Search(recursive Method)..
+Developed by:paida ram sai
+RegisterNumber: 23007931
+'''
+def binarySearch(array, k, low, high):
+    if high >= low:
+        mid=low+(high-low)//2
+        if array[mid]==k:
+            return mid
+        elif array[mid]>k:
+            return binarySearch(array,k,low,mid-1)
+        else:
+            return binarySearch(array,k,mid+1,high)
+    else:
+        return -1
+        
+array=eval(input())
+array.sort()
+k=eval(input())
+result = binarySearch(array, k, 0, len(array)-1)
+if result==-1:
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)
 
 ```
-## Sample Input and Output
+##  Output:
+![Screenshot 2023-11-28 183357](https://github.com/ramsai22/Search-Algorithm/assets/150319855/975e8a79-ba8e-41ab-9d6c-96bab39f1190)
 
+![Screenshot 2023-11-28 183420](https://github.com/ramsai22/Search-Algorithm/assets/150319855/8175c153-e052-4210-9236-6de32799663c)
 
-
-
+![Screenshot 2023-11-28 183514](https://github.com/ramsai22/Search-Algorithm/assets/150319855/b96d7791-db48-4b1c-a44e-806ec41e0f13)
 
 
 ## Result
